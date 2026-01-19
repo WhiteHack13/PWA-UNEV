@@ -1,4 +1,4 @@
-# **Programación Web Avanzada – Repositorio Oficial del Curso**
+> **Programación Web Avanzada**
 
 ## **Descripción del Repositorio**
 Este repositorio contiene todos los ejemplos de código, proyectos, ejercicios y materiales utilizados durante la asignatura **Programación Web Avanzada**.  
