@@ -70,3 +70,56 @@ Cada carpeta incluirá:
 
 Docente: Ing. Melvin Maldonado  
 Correo institucional: melvin.maldonado@unev.edu.hn
+
+# Tabla de Documentación Oficial – Programación Web Avanzada
+
+| Categoría | Documentación / Enlaces Oficiales |
+|----------|----------------------------------|
+| **Control de Versiones y Metodologías** | Git – https://git-scm.com/doc |
+| | Pro Git Book – https://git-scm.com/book/en/v2 |
+| | GitHub Docs – https://docs.github.com/ |
+| | GitHub Actions – https://docs.github.com/actions |
+| | Scrum Guide – https://scrumguides.org/ |
+| | Atlassian Agile Docs – https://www.atlassian.com/agile |
+| **Frontend – React** | React Docs – https://react.dev/ |
+| | React API – https://react.dev/reference |
+| **Frontend – Angular** | Angular Docs – https://angular.dev/ |
+| | Angular CLI – https://angular.dev/tools/cli |
+| **Frontend – Vue.js** | Vue 3 Docs – https://vuejs.org/guide/introduction.html |
+| **Lenguaje – JavaScript** | JavaScript MDN – https://developer.mozilla.org/en-US/docs/Web/JavaScript |
+| **DOM y Web APIs** | DOM MDN – https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model |
+| **Diseño Frontend – BEM** | BEM Docs – https://en.bem.info/methodology/ |
+| **Diseño Frontend – Atomic Design** | Atomic Design – https://atomicdesign.bradfrost.com/ |
+| **Backend – Node.js** | Node.js Docs – https://nodejs.org/en/docs |
+| **Backend – Express.js** | Express Docs – https://expressjs.com/ |
+| **ORM – Prisma** | Prisma Docs – https://www.prisma.io/docs |
+| **Seguridad – JWT** | RFC 7519 – https://datatracker.ietf.org/doc/html/rfc7519 |
+| | Auth0 JWT Docs – https://auth0.com/docs/secure/tokens/json-web-tokens |
+| **Seguridad – OAuth2** | OAuth2 Specs – https://oauth.net/2/ |
+| **Email – Nodemailer** | Nodemailer – https://nodemailer.com/about/ |
+| **Uploads – Multer** | Multer – https://github.com/expressjs/multer |
+| **Tareas Programadas – node-cron** | https://github.com/node-cron/node-cron |
+| **Base de Datos – PostgreSQL** | https://www.postgresql.org/docs/ |
+| **Base de Datos – MySQL** | https://dev.mysql.com/doc/ |
+| **Base de Datos – MongoDB** | https://www.mongodb.com/docs/ |
+| **Testing – Jest** | https://jestjs.io/docs/getting-started |
+| **Testing – Supertest** | https://github.com/ladjs/supertest |
+| **Testing – Vitest** | https://vitest.dev/ |
+| **Testing – Playwright** | https://playwright.dev/docs/intro |
+| **Contenedores – Docker** | https://docs.docker.com/ |
+| **Dockerfile Ref** | https://docs.docker.com/engine/reference/builder/ |
+| **Docker Compose** | https://docs.docker.com/compose/ |
+| **AWS – Documentación General** | https://docs.aws.amazon.com/ |
+| **AWS – Amplify Hosting** | https://docs.amplify.aws/ |
+| **AWS – EC2** | https://docs.aws.amazon.com/ec2/ |
+| **AWS – S3** | https://docs.aws.amazon.com/s3/ |
+| **Azure** | https://learn.microsoft.com/azure/ |
+| **Firebase** | https://firebase.google.com/docs |
+| **Swagger / OpenAPI** | https://swagger.io/docs/specification/about/ |
+| **Markdown** | https://www.markdownguide.org/basic-syntax/ |
+| **Postman** | https://learning.postman.com/docs/ |
+| **Hoppscotch** | https://docs.hoppscotch.io/ |
+| **n8n – Automatización** | https://docs.n8n.io/ |
+| **IA – OpenAI / ChatGPT** | https://platform.openai.com/docs |
+| **IA – GitHub Copilot** | https://docs.github.com/copilot |
+| **IA – HuggingFace** | https://huggingface.co/docs |
