@@ -1,0 +1,130 @@
+/* ======= BASE / RESET LIGERO ======= */
+* { box-sizing: border-box; }
+body {
+  font-family: system-ui, Arial, sans-serif;
+  margin: 24px;
+  line-height: 1.4;
+}
+
+/* ======= BLOQUE: user-card ======= */
+.user-card {
+  width: 100%;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 16px;
+  background: #ffffff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  margin-bottom: 18px;
+}
+
+/* Modificador del bloque: variante "highlighted" */
+.user-card--highlighted {
+  border-color: #88CFE0;
+  box-shadow: 0 8px 22px rgba(136, 207, 224, 0.25);
+}
+
+/* Modificador del bloque: estado deshabilitado */
+.user-card--disabled {
+  opacity: 0.6;
+  filter: grayscale(0.2);
+}
+
+/* ======= ELEMENTOS: estructura interna ======= */
+.user-card__header {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.user-card__avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 999px;
+  border: 2px solid #e5e7eb;
+  object-fit: cover;
+}
+
+.user-card__info { flex: 1; }
+
+.user-card__name {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.user-card__role {
+  margin: 4px 0 8px;
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+.user-card__status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  border: 1px solid #e5e7eb;
+}
+
+/* Modificadores del elemento "status" */
+.user-card__status--online {
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+  color: #065f46;
+}
+
+.user-card__status--offline {
+  background: #f9fafb;
+  border-color: #e5e7eb;
+  color: #6b7280;
+}
+
+.user-card__body {
+  margin-top: 12px;
+}
+
+.user-card__description {
+  margin: 0;
+  color: #111827;
+}
+
+/* ======= FOOTER / ACCIONES ======= */
+.user-card__footer {
+  margin-top: 14px;
+}
+
+.user-card__actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.user-card__action {
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Modificador del elemento: seleccionado */
+.user-card__action--selected {
+  background: #e6f7fb;
+  border-color: #88CFE0;
+}
+
+/* Modificador del elemento: acción destructiva */
+.user-card__action--danger {
+  border-color: #fca5a5;
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+.user-card__action:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}

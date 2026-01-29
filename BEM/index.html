@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BEM</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <section class="user-card user-card--highlighted">
+        <header class="user-card__header">
+            <img
+            class="user-card__avatar"
+            src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI="
+            alt="Avatar del usuario"
+            />
+
+            <div class="user-card__info">
+            <h3 class="user-card__name">María López</h3>
+            <p class="user-card__role">Analista de Sistemas</p>
+
+            <span class="user-card__status user-card__status--online">
+                En línea
+            </span>
+            </div>
+        </header>
+
+        <div class="user-card__body">
+            <p class="user-card__description">
+            Responsable de validar requerimientos y coordinar entregas por sprint.
+            </p>
+        </div>
+
+        <footer class="user-card__footer">
+            <div class="user-card__actions">
+            <button
+                class="user-card__action user-card__action--selected"
+                type="button"
+            >
+                Ver perfil
+            </button>
+
+            <button class="user-card__action" type="button">Mensaje</button>
+
+            <button
+                class="user-card__action user-card__action--danger"
+                type="button"
+            >
+                Desactivar
+            </button>
+            </div>
+        </footer>
+        </section>
+
+
+
+        <section class="user-card user-card--disabled">
+        <header class="user-card__header">
+            <img
+            class="user-card__avatar"
+            src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI="
+            alt="Avatar del usuario"
+            />
+
+            <div class="user-card__info">
+            <h3 class="user-card__name">Carlos Pérez</h3>
+            <p class="user-card__role">Desarrollador Frontend</p>
+
+            <span class="user-card__status user-card__status--offline">
+                Fuera de línea
+            </span>
+            </div>
+        </header>
+
+        <div class="user-card__body">
+            <p class="user-card__description">
+            Acceso suspendido por política de seguridad. Contactar administración.
+            </p>
+        </div>
+
+        <footer class="user-card__footer">
+            <div class="user-card__actions">
+            <button class="user-card__action" type="button" disabled>
+                Ver perfil
+            </button>
+
+            <button class="user-card__action" type="button" disabled>
+                Mensaje
+            </button>
+            </div>
+        </footer>
+        </section>
+    </body>
+</html>
