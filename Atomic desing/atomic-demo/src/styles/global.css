@@ -1,0 +1,14 @@
+@import "./tokens.css";
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+    margin:0;
+    font-family: var(--font);
+    background: radial-gradient(1200px 800px at 10% 10%, rgba(136,207,224,.18), transparent 60%),
+                radial-gradient(1200px 800px at 90% 20%, rgba(219,71,60,.12), transparent 55%),
+                linear-gradient(180deg, #071022, #050a16);
+    color: var(--text);
+}
+a{ color:inherit; text-decoration:none; }
+code{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }

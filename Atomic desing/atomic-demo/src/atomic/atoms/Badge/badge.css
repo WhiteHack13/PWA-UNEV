@@ -1,0 +1,11 @@
+.a-badge{
+    display:inline-flex;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: rgba(255,255,255,.04);
+    color: var(--text);
+}
+.a-badge--ok{ border-color: rgba(39,192,138,.35); background: rgba(39,192,138,.10); }
+.a-badge--warn{ border-color: rgba(219,71,60,.35); background: rgba(219,71,60,.10); }

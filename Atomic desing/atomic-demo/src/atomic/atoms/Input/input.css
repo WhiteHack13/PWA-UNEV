@@ -1,0 +1,17 @@
+.a-input{
+    width:100%;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.16);
+    background: rgba(0,0,0,.22);
+    color: var(--text);
+    outline: none;
+}
+.a-input:focus{
+    border-color: rgba(136,207,224,.55);
+    box-shadow: 0 0 0 3px rgba(136,207,224,.20);
+}
+.a-input--invalid{
+    border-color: rgba(219,71,60,.55);
+    box-shadow: 0 0 0 3px rgba(219,71,60,.18);
+}

@@ -1,0 +1,9 @@
+.o-sidebar{
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,.03);
+    border-radius: var(--r-lg);
+    padding: 14px;
+    box-shadow: var(--shadow2);
+}
+.o-sidebar__title{ font-weight:900; margin-bottom:10px; }
+.o-sidebar__content{ display:flex; flex-direction:column; gap:10px; color: var(--muted); font-size: 13px; }

@@ -1,0 +1,13 @@
+.t-ph{ display:flex; flex-direction:column; gap:12px; }
+.t-ph__row{ display:grid; grid-template-columns: 2fr 1fr; gap:12px; }
+.t-ph__box{
+    border:1px dashed rgba(255,255,255,.16);
+    background: rgba(255,255,255,.03);
+    border-radius: 14px;
+    height: 62px;
+}
+.t-ph__box--lg{ height: 92px; }
+.t-ph__box--xl{ height: 160px; }
+@media (max-width: 920px){
+    .t-ph__row{ grid-template-columns: 1fr; }
+}
