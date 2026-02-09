@@ -11,7 +11,7 @@ export default function AtomicShowcase() {
         <AppShell
         sidebar={
             <>
-            <div><b>Capturas por escena</b></div>
+            <div><b>Capturas por Texto</b></div>
             <div>2–3: Modelo mental + diagrama</div>
             <div>4–5: Átomos + estados</div>
             <div>6–7: Molécula FormField</div>

@@ -5,7 +5,7 @@ export default function InconsistentScreens() {
         <AppShell
         sidebar={
             <>
-            <div>Escena 1: “pantallas diferentes”</div>
+            <div>Texto 1: “pantallas diferentes”</div>
             <div>Capturar: botones distintos, márgenes raros</div>
             </>
         }
