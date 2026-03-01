@@ -35,7 +35,7 @@ export default function Quiz() {
 
   const onNext = () => {
     if (selected === null) {
-      show("Selecciona una opción 🙂", "error");
+      show("Selecciona una opción", "error");
       return;
     }
     answer({ qid: q.id, chosenIndex: selected, correctIndex: q.correctIndex });
@@ -71,7 +71,7 @@ export default function Quiz() {
               Salir
             </button>
             <button
-              onClick={() => { start({ category: decodedCategory, questions }); setIdx(0); setSelected(null); show("Nuevo set aleatorio ✅", "success"); }}
+              onClick={() => { start({ category: decodedCategory, questions }); setIdx(0); setSelected(null); show("Nuevo set aleatorio", "success"); }}
               className="rounded-2xl bg-white px-4 py-3 text-sm font-bold text-slate-900 border border-slate-200 hover:bg-slate-50"
             >
               Re-barajar
