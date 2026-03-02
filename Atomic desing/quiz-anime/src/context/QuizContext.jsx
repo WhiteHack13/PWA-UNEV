@@ -34,6 +34,6 @@ export function QuizProvider({ children }) {
 
 export function useQuiz() {
   const ctx = useContext(QuizContext);
-  if (!ctx) throw new Error("useQuiz must be used inside QuizProvider");
+  if (!ctx) throw new Error("useQuiz debe usarse dentro de QuizProvider");
   return ctx;
 }
