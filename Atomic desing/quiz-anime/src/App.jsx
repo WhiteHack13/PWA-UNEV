@@ -19,32 +19,11 @@ export default function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
 
-            <Route
-              path="/"
-              element={
-                <ProtectedRoute>
-                  <Home />
-                </ProtectedRoute>
-              }
-            />
-
-            <Route
-              path="/quiz/:category"
-              element={
-                <ProtectedRoute>
-                  <Quiz />
-                </ProtectedRoute>
-              }
-            />
-
-            <Route
-              path="/results"
-              element={
-                <ProtectedRoute>
-                  <Results />
-                </ProtectedRoute>
-              }
-            />
+            <Route element={<ProtectedRoute />}>
+              <Route path="/" element={ <Home /> } />
+              <Route path="/quiz/:category" element={ <Quiz /> } />
+              <Route path="/results" element={ <Results /> } />
+            </Route>
 
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
