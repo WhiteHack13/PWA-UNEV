@@ -22,7 +22,7 @@ export default function Login() {
     e.preventDefault();
     try {
       await login(email.trim(), password);
-      show("Bienvenido 👀", "success");
+      show("Bienvenido", "success");
       nav("/");
     } catch (err) {
       show(err.message || "Error al iniciar sesión", "error");
