@@ -1,6 +1,7 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+
 import { config } from "./config.js";
 import { AppError } from "./domain/errors.js";
 
@@ -13,22 +14,47 @@ import { preguntasRepo } from "./infrastructure/repositories/preguntasRepo.js";
 import { intentosRepo } from "./infrastructure/repositories/intentosRepo.js";
 import { respuestasRepo } from "./infrastructure/repositories/respuestasRepo.js";
 
-import { buildRouter } from "./infrastructure/http/routes.js";
+import { buildRouter } from "./infrastructure/http/routes/routes.js";
 
 const app = express();
 
-app.use(cors({ origin: config.frontendUrl, credentials: true }));
+app.use(cors({
+  origin: config.frontendUrl,
+  credentials: true
+}));
+
 app.use(express.json({ limit: "1mb" }));
 app.use(cookieParser());
 
-const repos = { config, usuariosRepo, sesionesRepo, tokensRepo, oauthRepo, categoriasRepo, preguntasRepo, intentosRepo, respuestasRepo };
+const repos = {
+  config,
+  usuariosRepo,
+  sesionesRepo,
+  tokensRepo,
+  oauthRepo,
+  categoriasRepo,
+  preguntasRepo,
+  intentosRepo,
+  respuestasRepo
+};
 
-app.get("/health", (_req, res) => res.json({ ok: true }));
-app.use("/api", buildRouter(repos));
-
-app.use((err, _req, res, _next) => {
-  const status = err instanceof AppError ? err.status : 500;
-  res.status(status).json({ error: err?.message || "Error" });
+app.get("/health", (_req, res) => {
+  res.json({ status: "ok" });
 });
 
-app.listen(config.port, () => console.log(`listening:${config.port}`));
+app.use("/api/v1", buildRouter(repos));
+
+app.use((err, _req, res, _next) => {
+
+  const status = err instanceof AppError ? err.status : 500;
+
+  res.status(status).json({
+    status,
+    error: err?.message || "Error interno del servidor"
+  });
+
+});
+
+app.listen(config.port, () => {
+  console.log(`API running on port ${config.port}`);
+});

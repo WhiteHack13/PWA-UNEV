@@ -1,15 +1,20 @@
-import { AppError } from "../../../domain/errors.js";
-import { verifyAccessToken } from "../../../application/auth/tokens.js";
+import jwt from "jsonwebtoken";
+import { config } from "../../../config.js";
 
-export const requireAuth = (req, _res, next) => {
-  const bearer = req.headers.authorization || "";
-  const headerToken = bearer.startsWith("Bearer ") ? bearer.slice(7) : "";
-  const token = req.cookies?.access_token || headerToken;
-  if (!token) return next(new AppError("No autorizado", 401));
+export const requireAuth = (req, res, next) => {
   try {
-    req.auth = verifyAccessToken(token);
+    const token = req.cookies?.access_token;
+
+    if (!token) {
+      return res.status(401).json({ error: "No autorizado" });
+    }
+
+    const payload = jwt.verify(token, config.jwtSecret);
+
+    req.auth = payload;
+
     next();
-  } catch {
-    next(new AppError("Token inválido", 401));
+  } catch (error) {
+    res.status(401).json({ error: "Token inválido" });
   }
 };
