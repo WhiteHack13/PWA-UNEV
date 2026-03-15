@@ -2,7 +2,7 @@ import bcrypt from "bcrypt";
 import { AppError } from "../../domain/errors.js";
 import { randomToken, sha256 } from "../../domain/security.js";
 import { signAccessToken } from "./tokens.js";
-
+import { config } from "../../config.js";
 export const buildAuthUsecases = ({ usuariosRepo, sesionesRepo, tokensRepo }) => {
   const registrar = async ({ nombre, correo, contrasena }) => {
     const existe = await usuariosRepo.obtenerPorCorreo(correo);
