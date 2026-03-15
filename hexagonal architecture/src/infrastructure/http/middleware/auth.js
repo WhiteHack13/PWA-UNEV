@@ -3,7 +3,15 @@ import { config } from "../../../config.js";
 
 export const requireAuth = (req, res, next) => {
   try {
-    const token = req.cookies?.access_token;
+
+    const cookieToken = req.cookies?.access_token;
+
+    const authHeader = req.headers.authorization || "";
+    const bearerToken = authHeader.startsWith("Bearer ")
+      ? authHeader.slice(7)
+      : null;
+
+    const token = cookieToken || bearerToken;
 
     if (!token) {
       return res.status(401).json({ error: "No autorizado" });
@@ -14,7 +22,8 @@ export const requireAuth = (req, res, next) => {
     req.auth = payload;
 
     next();
-  } catch (error) {
-    res.status(401).json({ error: "Token inválido" });
+
+  } catch (err) {
+    return res.status(401).json({ error: "Token inválido o expirado" });
   }
 };

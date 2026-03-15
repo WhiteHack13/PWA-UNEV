@@ -6,7 +6,6 @@ import { requireAuth } from "../middleware/auth.js";
 export const authRoutes = (repos) => {
 
     const router = express.Router();
- console.log("Router principal cargado");
     router.post("/register", registerController(repos));
     router.post("/login", loginController(repos));
     router.post("/refresh", refreshController(repos));

@@ -2,6 +2,20 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
+const frontendProtocol = (() => {
+  try {
+    return new URL(frontendUrl).protocol;
+  } catch {
+    return "http:";
+  }
+})();
+
+const cookieSecureEnv = process.env.COOKIE_SECURE;
+
+const cookieSecure =
+  cookieSecureEnv === "true" && frontendProtocol === "https:";
+
 export const config = {
 
   port: Number(process.env.PORT || 4000),
@@ -9,10 +23,10 @@ export const config = {
   jwtSecret: process.env.JWT_SECRET,
   accessTokenMinutes: Number(process.env.ACCESS_TOKEN_MINUTES || 15),
   refreshTokenDays: Number(process.env.REFRESH_TOKEN_DAYS || 7),
-  cookieSecure: process.env.COOKIE_SECURE === "true",
+  cookieSecure,
   cookieSameSite: process.env.COOKIE_SAMESITE || "lax",
   cookieDomain: process.env.COOKIE_DOMAIN || "",
-  frontendUrl: process.env.FRONTEND_URL,
+  frontendUrl,
   oauthRedirectBase: process.env.OAUTH_REDIRECT_BASE,
   googleClientId: process.env.GOOGLE_CLIENT_ID,
   googleClientSecret: process.env.GOOGLE_CLIENT_SECRET,

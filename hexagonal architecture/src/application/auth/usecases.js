@@ -2,12 +2,9 @@ import bcrypt from "bcrypt";
 import { AppError } from "../../domain/errors.js";
 import { randomToken, sha256 } from "../../domain/security.js";
 import { signAccessToken } from "./tokens.js";
-import { config } from "../../config.js";
 
 export const buildAuthUsecases = ({ usuariosRepo, sesionesRepo, tokensRepo }) => {
-
   const registrar = async ({ nombre, correo, contrasena }) => {
-
     const existe = await usuariosRepo.obtenerPorCorreo(correo);
 
     if (existe) {
@@ -30,7 +27,6 @@ export const buildAuthUsecases = ({ usuariosRepo, sesionesRepo, tokensRepo }) =>
   };
 
   const loginLocal = async ({ correo, contrasena, ip, agenteUsuario }) => {
-
     const user = await usuariosRepo.obtenerPorCorreo(correo);
 
     const hash =
@@ -54,7 +50,6 @@ export const buildAuthUsecases = ({ usuariosRepo, sesionesRepo, tokensRepo }) =>
     }
 
     const refreshPlain = randomToken(64);
-
     const refreshHash = sha256(refreshPlain);
 
     const expiraEn = new Date(
@@ -85,13 +80,11 @@ export const buildAuthUsecases = ({ usuariosRepo, sesionesRepo, tokensRepo }) =>
   };
 
   const refresh = async ({ refreshTokenPlain }) => {
-
     if (!refreshTokenPlain) {
       throw new AppError("No autorizado", 401);
     }
 
     const refreshHash = sha256(refreshTokenPlain);
-
     const tokenRow = await tokensRepo.obtenerValidoPorHash(refreshHash);
 
     if (!tokenRow) {
@@ -99,13 +92,11 @@ export const buildAuthUsecases = ({ usuariosRepo, sesionesRepo, tokensRepo }) =>
     }
 
     const sesionId = tokenRow.sesion_id;
-
     const usuarioId = tokenRow.usuario_id;
 
     await tokensRepo.revocarPorId(tokenRow.id);
 
     const nuevoPlain = randomToken(64);
-
     const nuevoHash = sha256(nuevoPlain);
 
     const expiraEn = new Date(
@@ -123,31 +114,23 @@ export const buildAuthUsecases = ({ usuariosRepo, sesionesRepo, tokensRepo }) =>
       sub: usuarioId,
       sid: sesionId
     });
-
     return {
       accessToken,
       refreshToken: nuevoPlain
     };
   };
-
   const logout = async ({ refreshTokenPlain }) => {
-
-    if (!refreshTokenPlain) {
-      return;
-    }
-
-    const refreshHash = sha256(refreshTokenPlain);
-
-    const tokenRow = await tokensRepo.obtenerValidoPorHash(refreshHash);
-
-    if (!tokenRow) {
-      return;
-    }
-
-    await tokensRepo.revocarPorId(tokenRow.id);
-
-    await sesionesRepo.revocar(tokenRow.sesion_id);
-  };
+  if (!refreshTokenPlain) {
+    return;
+  }
+  const refreshHash = sha256(refreshTokenPlain);
+  const tokenRow = await tokensRepo.obtenerValidoPorHash(refreshHash);
+  if (!tokenRow) {
+    return;
+  }
+  await tokensRepo.revocarPorId(tokenRow.id);
+  await sesionesRepo.revocar(tokenRow.sesion_id);
+};
 
   return {
     registrar,
