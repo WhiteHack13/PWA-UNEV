@@ -75,7 +75,6 @@ export const refreshController = (repos) => {
     const authUC = buildUC(repos);
     return async (req, res, next) => {
         try {
-            console.log('refres envido: ',req.cookies?.refresh_token);
         const refreshTokenPlain = req.cookies?.refresh_token;
         if (!refreshTokenPlain) {
             throw new AppError("Refresh token no enviado", 401);
