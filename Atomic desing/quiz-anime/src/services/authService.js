@@ -16,7 +16,7 @@ export function registerUser({ name, email, password }) {
   const users = readJson(StorageKeys.USERS, []);
   const exists = users.some(u => u.email.toLowerCase() === email.toLowerCase());
   if (exists) throw new Error("Ese correo ya está registrado.");
-  const newUser = { id: crypto.randomUUID(), name, email, password };
+  const newUser = { id: Math.random().toString(36).substring(2, 15), name, email, password };
   users.push(newUser);
   writeJson(StorageKeys.USERS, users);
   setSession({ email: newUser.email, name: newUser.name });
